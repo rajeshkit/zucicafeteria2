@@ -12,6 +12,11 @@ pipeline {
                 sh "mvn package"
             }
         }
-       
+        stage('deploy') { 
+            steps {
+                
+                sh "java -jar ./target/cafeteria2.jar"
+            }
+        }
     }
 }
