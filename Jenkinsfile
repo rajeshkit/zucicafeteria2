@@ -14,8 +14,9 @@ pipeline {
         }
         stage('deploy') { 
             steps {
-                
-                sh "java -jar ./target/cafeteria2.jar"
+                sh "cp /var/lib/jenkins/workspace/demo2/target/cafeteria2.jar /home/ec2-user/"
+                sh "cd /home/ec2-user"
+                sh "java -jar cafeteria2.jar"
             }
         }
     }
